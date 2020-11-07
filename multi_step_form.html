@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+        <meta charset="utf-8">
+            <title>Multistep Registration Form</title>
+            <meta content="noindex, nofollow" name="robots">
+<!-- Including CSS File Here -->
+        <link href="style.css" rel="stylesheet" type="text/css">
+<!-- Including JS File Here -->
+        <script src="multi_step_form.js" type="text/javascript"></script>
+        </head>
+            <body>
+                <div class="content">
+<!-- Multistep Form -->
+                    <div class="main">
+                    <form action="" class="regform" method="get" name="form" id ="form">
+<!-- Progressbar -->
+                    <ul id="progressbar">
+                        <li id="active1">etape1</li>
+                        <li id="active2"> etape 2</li>
+                        <li id="active3">etape3</li>
+                        <li id="active4">etape4</li>
+                    </ul>
+<!-- Fieldsets -->
+                    <fieldset id="first">
+                        <h2 class="title">informations personnelles</h2>
+                        <p class="subtitle">Step 1</p>
+                            <select class="options" id="civ">
+                                <option>Civilite</option>
+                                <option>Monsieur</option>
+                                <option>Madame</option>
+                             </select>
+
+                            <input class="text_field" name="nom"    id="nom"   placeholder="nom"     type="text">
+                            <input class="text_field" name="prenom" id="prenom" placeholder="prenom" type="text">
+                            <input class="text_field" name="mail"   id= "mail"  placeholder="mail"   type="text">
+                             <select class="options" id ="statut" >
+                                <option>--Select statut--</option>
+                                <option>cadre</option>
+                                <option>fonctionnaire</option>
+                                <option>etudiant</option>
+                                <option>sans emploie</option>
+                             </select>
+                            <input id="next_btn1" onclick="next_step1(event);setCookie();" type="button" value="Next">
+                    </fieldset>
+
+                    <fieldset id="second">
+                        <h2 class="title">infpmations public</h2>
+                        <p class="subtitle">Step 2</p>
+                        <p id="cookies"></p> 
+
+                        <h6>Quand êtes-vous parti(e) en voyage pour la dernière fois ?</h6>
+                            <input class="radio" name="periode" type="radio" value="1">moins de 2 ans<br>
+                            <input class="radio" name="periode" type="radio" value="2">3-4 ans<br>
+                            <input class="radio"  name="periode" type="radio" value="3">plus de 5ans<br>
+                            <input class="radio"  name="periode" type="radio" value="0">jamais partis<br>
+                        <h6>Le plus souvent, durant combien de temps restez-vous sur votre lieu de vacances ?</h6>
+                            <input class="radio" name="duree" type="radio" value="1">moins 1 semaine<br>
+                            <input class="radio" name="duree" type="radio" value="2">1semaine<br>
+                            <input class="radio" name="duree" type="radio" value="3">2semaine<br>
+                            <input class="radio" name="duree" type="radio" value="4">3semaine<br>
+                            <input class="radio" name="duree" type="radio" value="5">plus semaine<br>
+                        <h6>Que recherchez-vous, ou rechercheriez-vous, en priorité lors de vos voyages et séjours ?</h6>
+                            <input class="radio" name="loisir" type="radio" value="2">faire du sport<br>
+                            <input class="radio"  name="loisir" type="radio" value="3">Passer de bons moments entre amis ou en famille<br>
+                            <input class="radio"  name="loisir" type="radio" value="4">Découvrir la culture et la gastronomie locale<br>
+                        <h6>Quel est votre budget ?</h6>
+                            <input type="range" name="slider" id="slider" value="5" min="200" max="2500" step="100"oninput="num.value = this.value">
+                            <output id="num">0</output><br>
+
+                            <input id="pre_btn1" onclick="prev_step1()" type="button" value="Previous">
+                            <input id="next_btn2" name="next" onclick="next_step2(event);setCookie()" type="button" value="Next">
+                    </fieldset>
+
+                    <fieldset id="third">
+                        <h2 class="title">Personal Details</h2>
+                        <p class="subtitle">Step 3</p>
+                        <p id="cookies2"></p> 
+                            <h6>Avec qui partez-vous en vacances?</h6>
+                                <input type="checkbox" id="accompagnant" name=" conjoint" value="1">
+                                <label for="conjoint"> Conjoint(e)</label>
+
+                                <input type="checkbox" id="accompagnant" name="enfant" value="2">
+                                <label for="enfant">Enfant(s)</label>
+
+                                <input type="checkbox" id="accompagnant" name="amis" value="3">
+                                <label for="amis">Amis</label>
+
+                                <input type="checkbox" id="accompagnant" name="seul" value="1">
+                                <label for="seul">Seul(e)</label><br>
+
+                                <input type="checkbox" id="accompagnant" name="parents" value="0">
+                                <label for="parents">Parents</label>
+
+                                <input type="checkbox" id="accompagnant" name="collegues" value="3">
+                                <label for="collegues">Collègues de travail</label>
+
+                                <input type="checkbox" id="accompagnant" name="other" value="0">
+                                <label for="other">Autre réponse</label>
+
+                            <h6>A quelle fréquence utilisez-vous les services en ligne pour prévoir vos voyages ?</h6>
+                                <input name="frequence" type="radio" value="0">Jamais<br>
+                                <input name="frequence" type="radio" value="2">Occasionnellement<br>
+                                <input name="frequence" type="radio" value="3">c'est une evidence<br>
+                                
+                            <h6>Selon vous, quelles doivent être les principales qualités d’un site Internet proposant ce type de services ?</h6>
+
+                                <input type="checkbox" id="qualite" name="qualite" value="0">
+                                <label for="qualite">Visibilité et qualité de l’offre réponse</label><br>
+
+                                <input type="checkbox" id="qualite" name="ergonomie" value="2">
+                                <label for="ergonomie">Ergonomie et confort du site </label><br>
+
+                                <input type="checkbox" id="qualite" name="garanties" value="2">
+                                <label for="garanties">Garanties de l'entreprise</label><br>
+
+                                <input type="checkbox" id="qualite" name="confident">
+                                <label for="confidentialite">Confidentialité et préservation des données</label><br>
+                                
+                                <input type="checkbox" id="qualite" name="paiements" value="3">
+                                <label for="paiements">Sécurité des paiements</label><br>
+
+                                <input id="pre_btn1" onclick="prev_step2()" type="button" value="Previous">
+                                <input id="next_btn2" name="next" onclick="next_step3(); setCookie()" type="button" value="Next">
+                    </fieldset>
+
+                    <fieldset id ="quatre">
+                            <p id="cookies3"></p> 
+                                <h6>Indiquez ci-dessous vos 3 destinations de voyage préférées ou rêvées :</h6>
+                                    <textarea  name="destinations" rows="5" cols="30" maxlength="200"placeholder="-italie"onkeyup="nb_commentaire(this);"></textarea>
+                                    <span class="text-muted pull-right" id="count1"></span>
+                                    
+                                <h6>Indiquez ci-dessous vos commentaires :</h6>
+                                    <textarea  name="commentaire" placeholder="sasissez votre commentaire"rows="5" cols="30" maxlength="200"placeholder="-italie"onkeyup="nb_commentaire2(this);"></textarea>
+                                    <span class="text-muted pull-right" id="count2"></span><br>
+                                        <input id="pre_btn2" onclick="prev_step3()" type="button" value="Previous">
+                                        <input class="submit_btn" onclick="text(event)" type="submit" value="Submit">
+
+                    </fieldset>
+             </form>
+         </div>
+        </div>
+    </body>
+</html>
