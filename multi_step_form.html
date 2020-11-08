@@ -49,27 +49,27 @@
                         <p class="subtitle">Step 2</p>
                         <p id="cookies"></p> 
 
-                        <h6>Quand êtes-vous parti(e) en voyage pour la dernière fois ?</h6>
-                            <input class="radio" name="periode" type="radio" value="1">moins de 2 ans<br>
-                            <input class="radio" name="periode" type="radio" value="2">3-4 ans<br>
-                            <input class="radio"  name="periode" type="radio" value="3">plus de 5ans<br>
-                            <input class="radio"  name="periode" type="radio" value="0">jamais partis<br>
-                        <h6>Le plus souvent, durant combien de temps restez-vous sur votre lieu de vacances ?</h6>
-                            <input class="radio" name="duree" type="radio" value="1">moins 1 semaine<br>
-                            <input class="radio" name="duree" type="radio" value="2">1semaine<br>
-                            <input class="radio" name="duree" type="radio" value="3">2semaine<br>
-                            <input class="radio" name="duree" type="radio" value="4">3semaine<br>
-                            <input class="radio" name="duree" type="radio" value="5">plus semaine<br>
-                        <h6>Que recherchez-vous, ou rechercheriez-vous, en priorité lors de vos voyages et séjours ?</h6>
-                            <input class="radio" name="loisir" type="radio" value="2">faire du sport<br>
-                            <input class="radio"  name="loisir" type="radio" value="3">Passer de bons moments entre amis ou en famille<br>
-                            <input class="radio"  name="loisir" type="radio" value="4">Découvrir la culture et la gastronomie locale<br>
+                        <h6 id ="question1">Quand êtes-vous parti(e) en voyage pour la dernière fois ?</h6>
+                            <input id="periode" name="periode" type="radio" value="1">moins de 2 ans<br>
+                            <input id="periode" name="periode" type="radio" value="2">3-4 ans<br>
+                            <input id="periode"  name="periode" type="radio" value="3">plus de 5ans<br>
+                            <input id="periode"  name="periode" type="radio" value="0">jamais partis<br>
+                        <h6 id ="question2">Le plus souvent, durant combien de temps restez-vous sur votre lieu de vacances ?</h6>
+                            <input  id ="duree"name="duree" type="radio" value="1">moins 1 semaine<br>
+                            <input  id="duree" name="duree" type="radio" value="2">1semaine<br>
+                            <input  id="duree" name="duree" type="radio" value="3">2semaine<br>
+                            <input  id ="duree"name="duree" type="radio" value="4">3semaine<br>
+                            <input" id="duree" name="duree" type="radio" value="5">plus semaine<br>
+                        <h6 id ="question3">Que recherchez-vous, ou rechercheriez-vous, en priorité lors de vos voyages et séjours ?</h6>
+                            <input id="loisir" name="loisir" type="radio" value="2">faire du sport<br>
+                            <input id="loisir"  name="loisir" type="radio" value="3">Passer de bons moments entre amis ou en famille<br>
+                            <input id="loisir"  name="loisir" type="radio" value="4">Découvrir la culture et la gastronomie locale<br>
                         <h6>Quel est votre budget ?</h6>
                             <input type="range" name="slider" id="slider" value="5" min="200" max="2500" step="100"oninput="num.value = this.value">
                             <output id="num">0</output><br>
 
                             <input id="pre_btn1" onclick="prev_step1()" type="button" value="Previous">
-                            <input id="next_btn2" name="next" onclick="next_step2(event);setCookie()" type="button" value="Next">
+                            <input id="next_btn2" name="next" onclick="next_step2();setCookie()" type="button" value="Next">
                     </fieldset>
 
                     <fieldset id="third">
@@ -99,9 +99,9 @@
                                 <label for="other">Autre réponse</label>
 
                             <h6>A quelle fréquence utilisez-vous les services en ligne pour prévoir vos voyages ?</h6>
-                                <input name="frequence" type="radio" value="0">Jamais<br>
-                                <input name="frequence" type="radio" value="2">Occasionnellement<br>
-                                <input name="frequence" type="radio" value="3">c'est une evidence<br>
+                                <input id ="service" name="frequence" type="radio" value="0">Jamais<br>
+                                <input id ="service "name="frequence" type="radio" value="2">Occasionnellement<br>
+                                <input id="service" name="frequence" type="radio" value="3">c'est une evidence<br>
                                 
                             <h6>Selon vous, quelles doivent être les principales qualités d’un site Internet proposant ce type de services ?</h6>
 

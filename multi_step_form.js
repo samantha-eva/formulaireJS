@@ -29,22 +29,38 @@ document.getElementById("active1").style.color = "red";
 document.getElementById("active2").style.color = "gray";
 }
 // Function that executes on click of second next button.
-function next_step2(event) {
-    var radio_check_periode = document.getElementsByName('periode');
-    if (radio_check_periode[0].checked == false && radio_check_periode[1].checked == false && radio_check_periode[2].checked == false&& radio_check_periode[3].checked == false) {
-        var y = 0;
-        } else {
-        var y = 1;
+function next_step2() {
+
+    var periode = false;
+    var duree = false;
+    var loisir = false;
+ 
+    for (i = 0; i < document.forms['form']['periode'].length; i++) {
+        if (document.forms['form']['periode'][i].checked==true) {
+             periode= true ;
+        }
+    }
+    for(i =0; i< document.forms['form']['duree'].length;i++){
+        if(document.forms['form']['duree'][i].checked == true ){
+            duree = true;
+
+        }
+    }
+    for(i =0; i< document.forms['form']['loisir'].length;i++){
+        if(document.forms['form']['loisir'][i].checked == true ){
+            loisir = true;
+        }
+    }
+
+    if(periode == true && duree == true && loisir == true){
         document.getElementById("second").style.display = "none";
         document.getElementById("third").style.display = "block";
         document.getElementById("active3").style.color = "red";
-        }
-        if ( y == 0) {
-            alert("question 1*"); // Notifying validation
-            event.preventDefault();
-            } else {
-            return true;
-            }
+
+    }
+    duree = false;
+    periode =false; 
+    duree = false;
 }
 // Function that executes on click of second previous button.
 function prev_step2() {
