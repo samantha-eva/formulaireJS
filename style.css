@@ -6,7 +6,7 @@ margin:20px auto
 .main{
 float:left;
 width:650px;
-margin-top:80px
+margin-top:80px;
 }
 #progressbar{
 margin:0;
@@ -23,27 +23,26 @@ padding:20px;
 margin-top:50px;
 margin-left:85px;
 border-radius:5px;
-box-shadow:3px 3px 25px 1px gray
+box-shadow:3px 3px 25px 1px gray;
 }
-
 #first{
- display:block;
-width:400px;
+display:block;
+width:900px;
+height: 600px;
 padding:20px;
 margin-top:50px;
 border-radius:5px;
 margin-left:25px; 
-box-shadow:3px 3px 25px 1px gray
-
+box-shadow:3px 3px 25px 1px gray;
 }
 input[type=text],select,input[type=tel]{
-width:100%;
-margin:10px 0;
-height:40px;
-padding:5px;
-border:3px solid #6e6c6e;
-border-radius:4px
-}
+   width: 30%;
+    margin:10px 0;
+    height:40px;
+    padding:5px;
+    border:3px solid #6e6c6e;
+    border-radius:4px
+    }
 
 textarea{
 width:100%;

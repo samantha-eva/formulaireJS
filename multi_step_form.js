@@ -75,28 +75,32 @@ function verification(nom_controle) {
 
 
 // fontion button suivant avec verification.
-function next_step1(event) {
-    var count = 0;
-    var input_field = document.getElementsByClassName('text_field');
+function next_step1() {
 
-        for (var i = input_field.length; i > count; i--) {
-            if (input_field[i - 1].value == '') {
-                count = count + 1;
-            } else {
-                count = 0;
-                document.getElementById("first").style.display = "none";
+    // si la valeur des champs est non vide
+    if(document.form.prenom.value != "" && document.form.nom.value != "" && document.form.email.value !== "") {
+        // alors on passe a l'etape suivante 
+                 document.getElementById("first").style.display = "none";
                 document.getElementById("second").style.display = "block";
                 document.getElementById("active2").style.color = "red";
-            }
+      }
+      else {
+        // sinon on affiche un message
+        alert("Saisissez tous les champs");
+       
+      }
+      if(document.form.prenom.value == ""){
+        document.getElementById('prenom').style.border = '#CC3300 3px solid';
         }
-
-    if (count != 0  ) {
-    alert("*le formulaire n'est pas complet*"); 
-    event.preventDefault();
-    } else {
-    return true;
-    }   
+     if(document.form.nom.value == ""){
+        document.getElementById('nom').style.border = '#CC3300 3px solid';
+        }
+     if(document.form.email.value == ""){
+            document.getElementById('email').style.border = '#CC3300 3px solid';
+    }
+   
 }
+        
 // Function that executes on click of first previous button.
 function prev_step1() {
 document.getElementById("first").style.display = "block";
@@ -250,7 +254,7 @@ function nb_commentaire2(obj){
  
 
 function valider() {
-    // si la valeur du champ prenom est non vide
+    // si la valeur du textarea est non vide
     if(document.form.destinations.value != "" && document.form.commentaire.value != "") {
       // alors on envoie le formulaire
       document.form.submit();
