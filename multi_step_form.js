@@ -69,6 +69,8 @@ function verification(nom_controle) {
             alert("veuillez selectioner un statut");
         }
     }
+
+
 }
 
 
@@ -108,6 +110,7 @@ function next_step2() {
     var periode = false;
     var duree = false;
     var loisir = false;
+   
  
     for (i = 0; i < document.forms['form']['periode'].length; i++) {
         if (document.forms['form']['periode'][i].checked==true) {
@@ -126,15 +129,23 @@ function next_step2() {
         }
     }
 
-    if(periode == true && duree == true && loisir == true){
+    
+    if(periode == true && duree == true && loisir == true ){
         document.getElementById("second").style.display = "none";
         document.getElementById("third").style.display = "block";
         document.getElementById("active3").style.color = "red";
 
     }
-    duree = false;
-    periode =false; 
-    duree = false;
+    if(periode == false){
+        document.getElementById('q1').style.color = '#CC3300';
+    }
+    if(duree == false){
+        document.getElementById('q2').style.color = '#CC3300 ';
+    }
+    if(loisir == false){
+        document.getElementById('q3').style.color = '#CC3300';
+    }
+   
 }
 // Function that executes on click of second previous button.
 function prev_step2() {
@@ -145,11 +156,46 @@ document.getElementById("active3").style.color = "gray";
 }
 
 function next_step3() {
-    document.getElementById("third").style.display = "none";
-    document.getElementById("quatre").style.display = "block";
-    document.getElementById("active4").style.color = "red";
+
+
+    var accompagnant = false;
+    var frequence = false;
+    var qualite = false;
+    
+    for (i = 0; i < document.forms['form']['accompagnant'].length; i++) {
+        if (document.forms['form']['accompagnant'][i].checked==true) {
+            accompagnant= true ;
+        }
+    }
+    for(i =0; i< document.forms['form']['frequence'].length;i++){
+        if(document.forms['form']['frequence'][i].checked == true ){
+            frequence = true;
+    
+        }
+    }
+    for(i =0; i< document.forms['form']['qualite'].length;i++){
+        if(document.forms['form']['qualite'][i].checked == true ){
+            qualite = true;
+        }
+    }
+    
+    if(accompagnant == true && frequence == true && qualite == true){
+        document.getElementById("third").style.display = "none";
+        document.getElementById("quatre").style.display = "block";
+        document.getElementById("active4").style.color = "red";
   
     }
+    if(accompagnant == false){
+        document.getElementById('q5').style.color = '#CC3300';
+    }
+    if(frequence == false){
+        document.getElementById('q6').style.color = '#CC3300 ';
+    }
+    if(qualite == false){
+        document.getElementById('q7').style.color = '#CC3300';
+    
+    }
+}
 // Function that executes on click of second previous button.
 function prev_step3() {
     document.getElementById("quatre").style.display = "none";
@@ -169,6 +215,12 @@ function prev_step3() {
        document.getElementById("cookies2").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
        document.getElementById("cookies3").innerHTML = 'Bonjour' + ' ' + cookie_nom+ " "+cookie_prenom;
     }  
+
+//******************************************
+//***FUNCTION VALIDATION FORM Page 4******
+//******************************************
+
+
 
 //function nb_commentaire destination
 function nb_commentaire(obj){
@@ -197,6 +249,24 @@ function nb_commentaire2(obj){
 }
  
 
+function valider() {
+    // si la valeur du champ prenom est non vide
+    if(document.form.destinations.value != "" && document.form.commentaire.value != "") {
+      // alors on envoie le formulaire
+      document.form.submit();
+    }
+    else {
+      // sinon on affiche un message
+      alert("Saisissez votre text");
+     
+    }
+    if(document.form.destinations.value == ""){
+        document.getElementById('text1').style.border = '#CC3300 3px solid';
+    }
+    if(document.form.commentaire.value == ""){
+        document.getElementById('text2').style.border = '#CC3300 3px solid';
+    }
+  }
 		
 
 

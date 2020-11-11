@@ -34,8 +34,7 @@
                             <input class="text_field" name="nom"    id="nom"   placeholder="nom"     type="text"onblur="verification(this.id)">
                             <input class="text_field" name="prenom" id="prenom" placeholder="prenom" type="text"onblur="verification(this.id)">
                             <input class="text_field" name="email"   id= "email"  placeholder="email"   type="text"onblur="verification(this.id)">
-                            <input class="text_field" name="phone"   id= "phone"  placeholder="phone"   type="tel"pattern="[0-9] {2}-[0-9] {2}-[0-9] {2}-[0-9] {2}-[0-9]{2}
-                            "onblur="verification(this.id)">
+                            <!-- <input class="text_field" name="phone"   id= "phone"  placeholder="phone"   type="tel"  pattern="[0-9] {2}-[0-9] {2}-[0-9] {2}-[0-9] {2}-[0-9]{2}"onblur="verification(this.id)"> -->
                              <select class="options" id ="statut" >
                                 <option value="0">--Select statut--</option>
                                 <option value="1">Cadre</option>
@@ -53,22 +52,22 @@
                         <p class="subtitle">Step 2</p>
                         <p id="cookies"></p> 
 
-                        <h6 id ="question1">Quand êtes-vous parti(e) en voyage pour la dernière fois ?</h6>
+                        <h6 id ="q1">Quand êtes-vous parti(e) en voyage pour la dernière fois ?</h6>
                             <input id="periode" name="periode" type="radio" value="1">moins de 2 ans<br>
                             <input id="periode" name="periode" type="radio" value="2">3-4 ans<br>
                             <input id="periode"  name="periode" type="radio" value="3">plus de 5ans<br>
                             <input id="periode"  name="periode" type="radio" value="0">jamais partis<br>
-                        <h6 id ="question2">Le plus souvent, durant combien de temps restez-vous sur votre lieu de vacances ?</h6>
+                        <h6 id ="q2">Le plus souvent, durant combien de temps restez-vous sur votre lieu de vacances ?</h6>
                             <input  id ="duree"name="duree" type="radio" value="1">moins 1 semaine<br>
                             <input  id="duree" name="duree" type="radio" value="2">1semaine<br>
                             <input  id="duree" name="duree" type="radio" value="3">2semaine<br>
                             <input  id ="duree"name="duree" type="radio" value="4">3semaine<br>
                             <input" id="duree" name="duree" type="radio" value="5">plus semaine<br>
-                        <h6 id ="question3">Que recherchez-vous, ou rechercheriez-vous, en priorité lors de vos voyages et séjours ?</h6>
+                        <h6 id ="q3">Que recherchez-vous, ou rechercheriez-vous, en priorité lors de vos voyages et séjours ?</h6>
                             <input id="loisir" name="loisir" type="radio" value="2">faire du sport<br>
                             <input id="loisir"  name="loisir" type="radio" value="3">Passer de bons moments entre amis ou en famille<br>
                             <input id="loisir"  name="loisir" type="radio" value="4">Découvrir la culture et la gastronomie locale<br>
-                        <h6>Quel est votre budget ?</h6>
+                        <h6 id="q4">Quel est votre budget ?</h6>
                             <input type="range" name="slider" id="slider" value="5" min="200" max="2500" step="100"oninput="num.value = this.value">
                             <output id="num">0</output><br>
 
@@ -80,7 +79,7 @@
                         <h2 class="title">Personal Details</h2>
                         <p class="subtitle">Step 3</p>
                         <p id="cookies2"></p> 
-                            <h6>Avec qui partez-vous en vacances?</h6>
+                            <h6 id ="q5">Avec qui partez-vous en vacances?</h6>
                                 <input type="checkbox" id="accompagnant" name=" conjoint" value="1">
                                 <label for="conjoint"> Conjoint(e)</label>
 
@@ -102,12 +101,12 @@
                                 <input type="checkbox" id="accompagnant" name="other" value="0">
                                 <label for="other">Autre réponse</label>
 
-                            <h6>A quelle fréquence utilisez-vous les services en ligne pour prévoir vos voyages ?</h6>
+                            <h6 id="q6">A quelle fréquence utilisez-vous les services en ligne pour prévoir vos voyages ?</h6>
                                 <input id ="service" name="frequence" type="radio" value="0">Jamais<br>
                                 <input id ="service "name="frequence" type="radio" value="2">Occasionnellement<br>
                                 <input id="service" name="frequence" type="radio" value="3">c'est une evidence<br>
                                 
-                            <h6>Selon vous, quelles doivent être les principales qualités d’un site Internet proposant ce type de services ?</h6>
+                            <h6 id="q7">Selon vous, quelles doivent être les principales qualités d’un site Internet proposant ce type de services ?</h6>
 
                                 <input type="checkbox" id="qualite" name="qualite" value="0">
                                 <label for="qualite">Visibilité et qualité de l’offre réponse</label><br>
@@ -131,14 +130,14 @@
                     <fieldset id ="quatre">
                             <p id="cookies3"></p> 
                                 <h6>Indiquez ci-dessous vos 3 destinations de voyage préférées ou rêvées :</h6>
-                                    <textarea  name="destinations" rows="5" cols="30" maxlength="200"placeholder="-italie"onkeyup="nb_commentaire(this);"></textarea>
+                                    <textarea id="text1"  name="destinations" rows="5" cols="30" maxlength="200"placeholder="-italie"onkeyup="nb_commentaire(this);"></textarea>
                                     <span class="text-muted pull-right" id="count1"></span>
                                     
                                 <h6>Indiquez ci-dessous vos commentaires :</h6>
-                                    <textarea  name="commentaire" placeholder="sasissez votre commentaire"rows="5" cols="30" maxlength="200"placeholder="-italie"onkeyup="nb_commentaire2(this);"></textarea>
+                                    <textarea  id="text2" name="commentaire" placeholder="sasissez votre commentaire"rows="5" cols="30" maxlength="200"placeholder="-italie"onkeyup="nb_commentaire2(this);"></textarea>
                                     <span class="text-muted pull-right" id="count2"></span><br>
                                         <input id="pre_btn2" onclick="prev_step3()" type="button" value="Previous">
-                                        <input class="submit_btn" onclick="" type="submit" value="Submit">
+                                        <input class="submit_btn" onclick="valider()" type="button" value="Valider">
 
                     </fieldset>
              </form>
